@@ -746,25 +746,29 @@ const StyledWrapper = styled.div`
   .card .content .trust-bar .trust-icon { font-size: 1rem; line-height: 1; transition: all 0.22s ease; }
   .card .content .trust-bar .trust-label { font-weight: 800; font-size: 0.62rem; color: #1f2937; letter-spacing: 0.01em; }
 
-  /* ألوان دلالية خافتة لكل عنصر */
-  .card .content .trust-bar .trust-item[aria-label="أمان"] {
-    background: rgba(16, 185, 129, 0.08); /* أخضر لازوردى خافت */
-  }
-  .card .content .trust-bar .trust-item[aria-label="سرعة"] {
-    background: rgba(245, 158, 11, 0.10); /* برتقالي خافت */
-  }
-  .card .content .trust-bar .trust-item[aria-label="ثقة"] {
-    background: rgba(59, 130, 246, 0.10); /* أزرق خافت */
-  }
-  .card .content .trust-bar .trust-item[aria-label="جودة"] {
-    background: rgba(168, 85, 247, 0.10); /* بنفسجي خافت */
-  }
+  /* هالة توهّج ناعمة حول الأيقونة (بدون خلفية للعنصر) */
+  .card .content .trust-bar .trust-item { background: none; }
+  .card .content .trust-bar .trust-icon { position: relative; z-index: 1; }
+  .card .content .trust-bar .trust-icon::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; opacity: 0.3; filter: blur(6px); z-index: -1; transition: opacity 160ms ease, filter 160ms ease, transform 160ms ease; }
 
-  /* تأثير خفيف عند التحويم */
-  .card .content .trust-bar .trust-item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  }
+  /* ألوان الهالة حسب الدلالة */
+  .card .content .trust-bar .trust-item[aria-label="أمان"] .trust-icon { filter: drop-shadow(0 0 6px rgba(16,185,129,0.35)); }
+  .card .content .trust-bar .trust-item[aria-label="أمان"] .trust-icon::after { background: radial-gradient(40% 40% at 50% 50%, rgba(16,185,129,0.55), rgba(16,185,129,0)); }
+
+  .card .content .trust-bar .trust-item[aria-label="سرعة"] .trust-icon { filter: drop-shadow(0 0 6px rgba(245,158,11,0.35)); }
+  .card .content .trust-bar .trust-item[aria-label="سرعة"] .trust-icon::after { background: radial-gradient(40% 40% at 50% 50%, rgba(245,158,11,0.55), rgba(245,158,11,0)); }
+
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon { filter: drop-shadow(0 0 6px rgba(59,130,246,0.35)); }
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon::after { background: radial-gradient(40% 40% at 50% 50%, rgba(59,130,246,0.55), rgba(59,130,246,0)); }
+
+  .card .content .trust-bar .trust-item[aria-label="جودة"] .trust-icon { filter: drop-shadow(0 0 6px rgba(168,85,247,0.35)); }
+  .card .content .trust-bar .trust-item[aria-label="جودة"] .trust-icon::after { background: radial-gradient(40% 40% at 50% 50%, rgba(168,85,247,0.55), rgba(168,85,247,0)); }
+
+  /* تكبير وتوهّج أقوى عند التحويم/التركيز */
+  .card .content .trust-bar .trust-item:hover .trust-icon,
+  .card .content .trust-bar .trust-item:focus-visible .trust-icon { transform: translateY(-1px) scale(1.06); }
+  .card .content .trust-bar .trust-item:hover .trust-icon::after,
+  .card .content .trust-bar .trust-item:focus-visible .trust-icon::after { opacity: 0.5; filter: blur(7px); }
 
   /* انيميشن النقاط الجذابة */
   @keyframes circle-bounce { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
