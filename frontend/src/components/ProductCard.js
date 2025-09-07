@@ -242,16 +242,23 @@ const ProductCard = () => {
             <div className="divider" aria-hidden="true" />
 
             {/* شريط الثقة */}
-            <div className="trust-bar">
-              <div className="trust-item"><span className="trust-icon">🛡️</span></div>
-              <div className="trust-separator">|</div>
-              <div className="trust-item"><span className="trust-icon">🏆</span></div>
-              <div className="trust-separator">|</div>
-              <div className="trust-item"><span className="trust-icon">📊</span></div>
-              <div className="trust-separator">|</div>
-              <div className="trust-item"><span className="trust-icon">⚡</span></div>
-              <div className="trust-separator">|</div>
-              <div className="trust-item"><span className="trust-icon">🏅</span></div>
+            <div className="trust-bar" role="list" aria-label="شريط الثقة">
+              <div className="trust-item" role="listitem" aria-label="أمان">
+                <span className="trust-icon" aria-hidden="true">🛡️</span>
+                <span className="trust-label">أمان</span>
+              </div>
+              <div className="trust-item" role="listitem" aria-label="سرعة">
+                <span className="trust-icon" aria-hidden="true">⚡</span>
+                <span className="trust-label">سرعة</span>
+              </div>
+              <div className="trust-item" role="listitem" aria-label="ثقة">
+                <span className="trust-icon" aria-hidden="true">📊</span>
+                <span className="trust-label">ثقة</span>
+              </div>
+              <div className="trust-item" role="listitem" aria-label="جودة">
+                <span className="trust-icon" aria-hidden="true">🏅</span>
+                <span className="trust-label">جودة</span>
+              </div>
             </div>
           </div>
         </div>
