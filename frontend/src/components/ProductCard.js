@@ -254,7 +254,7 @@ const ProductCard = () => {
               </div>
               <div className="trust-item" role="listitem" aria-label="ثقة">
                 <span className="trust-icon-wrap" aria-hidden="true">
-                  <FiUserCheck className="trust-icon trust-icon--invert" />
+                  <BsPatchCheckFill className="trust-icon trust-icon--invert" />
                 </span>
                 <span className="trust-label">ثقة</span>
               </div>
