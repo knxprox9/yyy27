@@ -746,6 +746,26 @@ const StyledWrapper = styled.div`
   .card .content .trust-bar .trust-icon { font-size: 1rem; line-height: 1; transition: all 0.22s ease; }
   .card .content .trust-bar .trust-label { font-weight: 800; font-size: 0.62rem; color: #1f2937; letter-spacing: 0.01em; }
 
+  /* ألوان دلالية خافتة لكل عنصر */
+  .card .content .trust-bar .trust-item[aria-label="أمان"] {
+    background: rgba(16, 185, 129, 0.08); /* أخضر لازوردى خافت */
+  }
+  .card .content .trust-bar .trust-item[aria-label="سرعة"] {
+    background: rgba(245, 158, 11, 0.10); /* برتقالي خافت */
+  }
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] {
+    background: rgba(59, 130, 246, 0.10); /* أزرق خافت */
+  }
+  .card .content .trust-bar .trust-item[aria-label="جودة"] {
+    background: rgba(168, 85, 247, 0.10); /* بنفسجي خافت */
+  }
+
+  /* تأثير خفيف عند التحويم */
+  .card .content .trust-bar .trust-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
   /* انيميشن النقاط الجذابة */
   @keyframes circle-bounce { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
