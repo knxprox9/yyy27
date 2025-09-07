@@ -252,7 +252,7 @@ const ProductCard = () => {
                 <span className="trust-label">سرعة</span>
               </div>
               <div className="trust-item" role="listitem" aria-label="ثقة">
-                <FiCheckCircle className="trust-icon" aria-hidden="true" />
+                <FiThumbsUp className="trust-icon" aria-hidden="true" />
                 <span className="trust-label">ثقة</span>
               </div>
               <div className="trust-item" role="listitem" aria-label="جودة">
