@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
-import { FiTruck, FiShield, FiGift, FiX, FiThumbsUp } from 'react-icons/fi';
+import { FiTruck, FiShield, FiGift, FiX, FiUserCheck } from 'react-icons/fi';
 import ToggleButton from './ToggleButton';
 
 // بيانات الخدمات المتاحة (ليست وسائل دفع)
