@@ -740,10 +740,11 @@ const StyledWrapper = styled.div`
   .card .content .service-info-bar:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); }
 
   /* شريط الثقة */
-  .card .content .trust-bar { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 0; margin: 0; font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Cairo', sans-serif; background: none; border: none; box-shadow: none; }
-  .card .content .trust-bar .trust-item { display: flex; align-items: center; justify-content: center; }
-  .card .content .trust-bar .trust-separator { color: #e5e7eb; font-weight: 300; font-size: 0.7rem; opacity: 0.9; }
-  .card .content .trust-bar .trust-icon { font-size: 0.96rem; line-height: 1; transition: all 0.22s ease; }
+  .card .content .trust-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; align-items: center; padding: 0.1rem 0; margin: 0; font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Cairo', sans-serif; background: none; border: none; box-shadow: none; }
+  .card .content .trust-bar .trust-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 6px 4px; border-radius: 10px; min-height: 44px; }
+  .card .content .trust-bar .trust-item:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }
+  .card .content .trust-bar .trust-icon { font-size: 1rem; line-height: 1; transition: all 0.22s ease; }
+  .card .content .trust-bar .trust-label { font-weight: 800; font-size: 0.62rem; color: #1f2937; letter-spacing: 0.01em; }
 
   /* انيميشن النقاط الجذابة */
   @keyframes circle-bounce { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
