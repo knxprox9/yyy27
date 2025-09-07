@@ -252,7 +252,9 @@ const ProductCard = () => {
                 <span className="trust-label">سرعة</span>
               </div>
               <div className="trust-item" role="listitem" aria-label="ثقة">
-                <FiUserCheck className="trust-icon" aria-hidden="true" />
+                <span className="trust-icon-wrap" aria-hidden="true">
+                  <FiUserCheck className="trust-icon trust-icon--invert" />
+                </span>
                 <span className="trust-label">ثقة</span>
               </div>
               <div className="trust-item" role="listitem" aria-label="جودة">
