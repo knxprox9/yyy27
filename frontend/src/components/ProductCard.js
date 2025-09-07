@@ -748,6 +748,38 @@ const StyledWrapper = styled.div`
   .card .content .trust-bar .trust-icon { font-size: 1rem; line-height: 1; transition: all 0.22s ease; }
   .card .content .trust-bar .trust-label { font-weight: 800; font-size: 0.62rem; color: #1f2937; letter-spacing: 0.01em; }
 
+  /* شارة ثلاثية الأبعاد لعنصر ثقة */
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px; border-radius: 999px;
+    background: radial-gradient(140% 140% at 30% 15%, rgba(255,255,255,0.85), rgba(255,255,255,0) 35%),
+                linear-gradient(135deg, #60A5FA 0%, #3B82F6 45%, #2563EB 100%);
+    box-shadow:
+      inset 0 1px 1px rgba(255,255,255,0.7),
+      inset 0 -3px 6px rgba(0,0,0,0.18),
+      0 6px 14px rgba(37,99,235,0.15),
+      0 3px 6px rgba(37,99,235,0.12);
+  }
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon--invert {
+    color: #ffffff; /* أيقونة بيضاء فوق الشارة */
+    width: 19px; height: 19px;
+    stroke-width: 2.2px;
+  }
+  /* حلقة محيطية رفيعة */
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon-wrap::after {
+    content: '';
+    position: absolute; inset: 0; border-radius: inherit;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.18), inset 0 0 0 1px rgba(0,0,0,0.06);
+    pointer-events: none;
+  }
+
+  /* نُخفّف توهج الهالة/النبض حول عنصر ثقة حتى لا يتعارض مع 3D */
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon { filter: drop-shadow(0 0 4px rgba(59,130,246,0.28)); }
+  .card .content .trust-bar .trust-item[aria-label="ثقة"] .trust-icon::after { opacity: 0.22; filter: blur(5px); }
+
   /* هالة توهّج ناعمة حول الأيقونة (بدون خلفية للعنصر) */
   .card .content .trust-bar .trust-item { background: none; }
   .card .content .trust-bar .trust-icon { position: relative; z-index: 1; }
