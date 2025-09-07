@@ -130,7 +130,7 @@ backend:
 frontend:
   - task: "Install frontend dependencies and restart frontend dev server"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/package.json"
     stuck_count: 0
     priority: "medium"
